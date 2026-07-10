@@ -1,0 +1,7 @@
+# 版權教材 PDF：不上傳到 repo
+Chapter *.pdf
+*.pdf
+
+# 系統／編輯器雜項
+.DS_Store
+Thumbs.db
