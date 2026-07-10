@@ -88,6 +88,10 @@
   .note .trap{background:#3a2a12;border-left:3px solid var(--warn);padding:10px 14px;border-radius:0 8px 8px 0;margin:12px 0;font-size:14px}
   .note .num{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:12px 0;font-size:14px}
   .note .lead{font-size:15px;color:#cde3f5;background:#12283a;border-radius:10px;padding:12px 16px;margin:0 0 6px;border:1px solid #24506e}
+  .note figure.fig{margin:16px 0;background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:14px 12px}
+  .note figure.fig svg{display:block;width:100%;height:auto;max-width:600px;margin:0 auto}
+  .note figure.fig figcaption{color:var(--muted);font-size:12.5px;text-align:center;margin-top:10px;line-height:1.5}
+  .note .fig text{font-family:"Noto Sans TC","PingFang TC",system-ui,sans-serif}
 </style>
 </head>
 <body>
@@ -864,17 +868,58 @@ const NOTES={
 <ul><li><b>Epimysium</b>（肌外膜）：包住<b>整條</b>肌肉，最外那層。</li><li><b>Perimysium</b>（肌束膜）：把肌纖維捆成<b>一束一束</b>，每一束叫 <span class="en-term">fasciculus</span>（肌束）。</li><li><b>Endomysium</b>（肌內膜）：包住<b>單一條</b>肌纖維。</li></ul>
 <p>順序一定要記牢：<b>Epi（外）→ Peri（中）→ Endo（內）</b>。這裡藏著一個很多人忽略、但觀念很重要的點：這三層膜在肌肉兩端會匯集、延續成<b>肌腱（tendon）</b>接到骨頭上。所以肌纖維收縮時，力量<b>不是直接拉骨頭</b>，而是先傳到這些結締組織、再經肌腱傳到骨骼。這叫「力的串聯傳遞」。</p>
 <p>教學上這帶出兩個實務意義：第一，肌腱與結締組織也會因訓練而變強、變厚，這是為什麼新手初期力量進步很快卻還沒長多少肌肉——很大一部分是結締組織與神經的適應。第二，這條「力量傳遞鏈」任何一環偷懶或受傷（例如肌腱發炎），整條鏈的表現都會打折。</p>
+<figure class="fig"><svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="肌肉三層結締組織示意圖">
+<rect x="30" y="60" width="330" height="180" rx="88" fill="none" stroke="#3ea6ff" stroke-width="3"/>
+<g stroke="#57d9a3" stroke-width="2.5" fill="#3ea6ff" fill-opacity="0.06">
+<ellipse cx="115" cy="150" rx="40" ry="64"/><ellipse cx="195" cy="150" rx="40" ry="64"/><ellipse cx="275" cy="150" rx="40" ry="64"/></g>
+<g fill="#17222e" stroke="#ffb454" stroke-width="2">
+<circle cx="102" cy="120" r="9"/><circle cx="128" cy="122" r="9"/><circle cx="100" cy="150" r="9"/><circle cx="130" cy="150" r="9"/><circle cx="105" cy="180" r="9"/><circle cx="129" cy="180" r="9"/>
+<circle cx="182" cy="120" r="9"/><circle cx="208" cy="122" r="9"/><circle cx="180" cy="150" r="9"/><circle cx="210" cy="150" r="9"/><circle cx="185" cy="180" r="9"/><circle cx="209" cy="180" r="9"/>
+<circle cx="262" cy="120" r="9"/><circle cx="288" cy="122" r="9"/><circle cx="260" cy="150" r="9"/><circle cx="290" cy="150" r="9"/><circle cx="265" cy="180" r="9"/><circle cx="289" cy="180" r="9"/></g>
+<g stroke="#5b6b7a" stroke-width="1"><line x1="195" y1="66" x2="430" y2="40"/><line x1="235" y1="150" x2="430" y2="120"/><line x1="290" y1="120" x2="430" y2="200"/></g>
+<g fill="#e8eef4" font-size="14"><text x="436" y="44"><tspan fill="#3ea6ff" font-weight="700">Epimysium</tspan> 肌外膜</text><text x="436" y="62" font-size="12" fill="#9fb0c0">包整條肌肉</text>
+<text x="436" y="124"><tspan fill="#57d9a3" font-weight="700">Perimysium</tspan> 肌束膜</text><text x="436" y="142" font-size="12" fill="#9fb0c0">包一束 = fasciculus</text>
+<text x="436" y="204"><tspan fill="#ffb454" font-weight="700">Endomysium</tspan> 肌內膜</text><text x="436" y="222" font-size="12" fill="#9fb0c0">包單一肌纖維</text></g>
+<text x="195" y="278" text-anchor="middle" fill="#9fb0c0" font-size="12.5">由外到內：Epimysium → Perimysium → Endomysium</text>
+</svg><figcaption>圖1　肌肉的三層包裝（橫斷面）。三層結締組織在兩端匯集成肌腱、把收縮力傳到骨頭。</figcaption></figure>
 
 <h4>再往裡看：肌纖維與肌節</h4><p>剝開肌內膜，我們看到<b>單一條肌纖維（muscle fiber）＝一個肌肉細胞</b>。它有幾個和一般細胞不同的特徵，考試會考：它是<b>多核（multinucleated）</b>的、細胞膜特別叫 <span class="en-term">sarcolemma</span>（肌漿膜）、細胞質叫 <span class="en-term">sarcoplasm</span>（肌漿）。肌漿膜上還會向內凹陷成一條條 <b>T管（T-tubule）</b>，等一下講收縮時你會知道它的用途。</p>
 <p>肌纖維裡塞滿了平行排列的 <span class="en-term">myofibril</span>（肌原纖維），肌原纖維又由一節一節的 <b>sarcomere</b>（肌節）頭尾相接串成。<b>肌節就是肌肉收縮的最小功能單位</b>，整場收縮大戲就在這個小舞台上演。</p>
 <p>肌節以 <b>Z-line</b>（Z 線）為左右邊界，中間交錯排著兩種蛋白絲：粗的 <span class="en-term">myosin</span>（肌凝蛋白，含會擺動的「橫橋 head」）和細的 <span class="en-term">actin</span>（肌動蛋白）。細肌絲上還纏著兩個調節開關——<b>tropomyosin</b>（把 actin 的結合位蓋住）和 <b>troponin</b>（負責接收鈣離子訊號、掀開蓋子）。記住這兩個開關的角色，滑動絲的步驟就水到渠成。</p>
 <div class="num"><b>肌節分區名稱（要看得懂圖）：</b>Z 線＝邊界；<b>I-band</b>＝只有細肌絲的區；<b>A-band</b>＝粗肌絲的全長範圍（含與細肌絲重疊處）；<b>H-zone</b>＝A 帶中央只有粗肌絲、沒重疊的區；<b>M-line</b>＝肌節正中央、固定粗肌絲。</div>
+<figure class="fig"><svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="肌節結構示意圖">
+<line x1="80" y1="70" x2="80" y2="205" stroke="#3ea6ff" stroke-width="6"/><line x1="520" y1="70" x2="520" y2="205" stroke="#3ea6ff" stroke-width="6"/>
+<line x1="300" y1="80" x2="300" y2="200" stroke="#9fb0c0" stroke-width="2" stroke-dasharray="5 4"/>
+<g stroke="#57d9a3" stroke-width="3.5" stroke-linecap="round">
+<line x1="80" y1="92" x2="270" y2="92"/><line x1="80" y1="140" x2="270" y2="140"/><line x1="80" y1="188" x2="270" y2="188"/>
+<line x1="520" y1="92" x2="330" y2="92"/><line x1="520" y1="140" x2="330" y2="140"/><line x1="520" y1="188" x2="330" y2="188"/></g>
+<g stroke="#ff6b6b" stroke-width="8" stroke-linecap="round"><line x1="175" y1="116" x2="425" y2="116"/><line x1="175" y1="164" x2="425" y2="164"/></g>
+<g stroke="#ff6b6b" stroke-width="2"><line x1="200" y1="116" x2="208" y2="104"/><line x1="240" y1="116" x2="248" y2="104"/><line x1="360" y1="116" x2="352" y2="104"/><line x1="400" y1="116" x2="392" y2="104"/><line x1="200" y1="164" x2="208" y2="176"/><line x1="240" y1="164" x2="248" y2="176"/><line x1="360" y1="164" x2="352" y2="176"/><line x1="400" y1="164" x2="392" y2="176"/></g>
+<g fill="#9fb0c0" font-size="13"><text x="80" y="62" text-anchor="middle" fill="#3ea6ff" font-weight="700">Z線</text><text x="520" y="62" text-anchor="middle" fill="#3ea6ff" font-weight="700">Z線</text></g>
+<path d="M270 60 v-6 H330 v6" fill="none" stroke="#9fb0c0" stroke-width="1.5"/><text x="300" y="46" text-anchor="middle" fill="#e8eef4" font-size="13" font-weight="700">H區</text>
+<path d="M175 218 v7 H425 v-7" fill="none" stroke="#9fb0c0" stroke-width="1.5"/><text x="300" y="244" text-anchor="middle" fill="#e8eef4" font-size="13">A帶 A-band（粗肌絲全長，收縮時<tspan fill="#ffb454" font-weight="700">不變</tspan>）</text>
+<path d="M80 258 v7 H175 v-7" fill="none" stroke="#9fb0c0" stroke-width="1.5"/><path d="M425 258 v7 H520 v-7" fill="none" stroke="#9fb0c0" stroke-width="1.5"/>
+<text x="127" y="282" text-anchor="middle" fill="#e8eef4" font-size="13">I帶</text><text x="472" y="282" text-anchor="middle" fill="#e8eef4" font-size="13">I帶</text>
+</svg><figcaption>圖2　肌節（sarcomere）。<span style="color:#ff6b6b">■</span> 粗肌絲 myosin（含橫橋）、<span style="color:#57d9a3">■</span> 細肌絲 actin；中央虛線為 M 線。A 帶＝粗肌絲全長、H 區＝只有粗肌絲、I 帶＝只有細肌絲。</figcaption></figure>
 
 <h4>核心機制：興奮收縮偶聯 + 滑動絲理論</h4><p>這是全章最重要、也最愛考的一段，我們一步一步走。先講一句總結，你之後只要記得住這句，細節都能推回來：<b>收縮時肌絲本身「長度不變」，是粗、細肌絲彼此「滑動、重疊變多」，把 Z 線互相拉近，肌節因此縮短。</b>就像兩手手指交叉互推——手指沒變短，只是插得更深。</p>
 <p>完整流程（<span class="en-term">excitation-contraction coupling</span> 興奮收縮偶聯）：</p>
 <ul><li>① 運動神經衝動傳到末梢，在<b>神經肌肉接合處（neuromuscular junction）</b>釋放神經傳導物質 <b>acetylcholine（乙醯膽鹼，ACh）</b>。</li><li>② ACh 讓肌漿膜產生<b>動作電位</b>，沿著肌漿膜、再鑽進 <b>T管</b>傳到肌纖維深處。</li><li>③ 動作電位刺激包在旁邊的 <b>肌漿網（sarcoplasmic reticulum, SR）釋放 Ca²⁺</b>（鈣離子）。<b>SR 就是肌肉細胞的「鈣離子倉庫」</b>。</li><li>④ Ca²⁺ 結合到 <b>troponin</b> → 拉動 tropomyosin → <b>掀開 actin 上的結合位</b>。</li><li>⑤ myosin 橫橋抓住 actin、擺動拉近（power stroke），這就是<b>橫橋循環（cross-bridge cycling）</b>；橫橋要「鬆手、再抓」需要<b>ATP</b>。</li><li>⑥ 放鬆時，Ca²⁺ 被主動打回 SR（也要 ATP），結合位重新蓋住，肌肉才鬆開。</li></ul>
 <p>這裡有兩個常被追問的細節：<b>ATP 有兩個角色</b>——不只提供橫橋擺動的能量，還負責讓橫橋「鬆手」以及把鈣打回倉庫。所以人死後 ATP 耗盡、橫橋鬆不開，肌肉僵硬，這就是「屍僵（rigor mortis）」，也是理解 ATP 角色最好的反例。另外，第 3 章你會學到 ATP 幾秒就用完、要靠能量系統一直補——現在先把「收縮＝一直花 ATP」這個連結記住。</p>
 <div class="num"><b>肌節帶區的變化（超高頻考點）：</b>收縮時 <b>I-band 變窄、H-zone 變窄</b>，而 <b>A-band 寬度不變</b>。推導法：A-band ＝ 粗肌絲的全長，粗肌絲長度不變，所以 A-band 不變；細肌絲往中間滑，所以「只有細肌絲」的 I 帶和「只有粗肌絲」的 H 區都被吃掉而變窄。<b>只要記「A 帶不變」，其餘用滑動邏輯推。</b></div>
+<figure class="fig"><svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="滑動絲理論：放鬆與收縮比較">
+<text x="20" y="40" fill="#57d9a3" font-size="14" font-weight="700">放鬆 Relaxed</text>
+<line x1="100" y1="48" x2="100" y2="104" stroke="#3ea6ff" stroke-width="5"/><line x1="500" y1="48" x2="500" y2="104" stroke="#3ea6ff" stroke-width="5"/>
+<g stroke="#57d9a3" stroke-width="3"><line x1="100" y1="60" x2="260" y2="60"/><line x1="100" y1="92" x2="260" y2="92"/><line x1="500" y1="60" x2="340" y2="60"/><line x1="500" y1="92" x2="340" y2="92"/></g>
+<line x1="175" y1="76" x2="425" y2="76" stroke="#ff6b6b" stroke-width="7" stroke-linecap="round"/>
+<path d="M175 112 v5 H425 v-5" fill="none" stroke="#9fb0c0" stroke-width="1.3"/><text x="300" y="130" text-anchor="middle" fill="#9fb0c0" font-size="12">A帶（寬）</text>
+<text x="20" y="185" fill="#ffb454" font-size="14" font-weight="700">收縮 Contracted</text>
+<line x1="150" y1="193" x2="150" y2="249" stroke="#3ea6ff" stroke-width="5"/><line x1="450" y1="193" x2="450" y2="249" stroke="#3ea6ff" stroke-width="5"/>
+<g stroke="#57d9a3" stroke-width="3"><line x1="150" y1="205" x2="300" y2="205"/><line x1="150" y1="237" x2="300" y2="237"/><line x1="450" y1="205" x2="300" y2="205"/><line x1="450" y1="237" x2="300" y2="237"/></g>
+<line x1="175" y1="221" x2="425" y2="221" stroke="#ff6b6b" stroke-width="7" stroke-linecap="round"/>
+<g stroke="#ffb454" stroke-width="2" fill="none"><path d="M120 221 l18 0 m-6 -5 l6 5 -6 5"/><path d="M480 221 l-18 0 m6 -5 l-6 5 6 5"/></g>
+<path d="M175 257 v5 H425 v-5" fill="none" stroke="#9fb0c0" stroke-width="1.3"/><text x="300" y="275" text-anchor="middle" fill="#ffb454" font-size="12" font-weight="700">A帶（相同！）</text>
+</svg><figcaption>圖3　滑動絲理論。收縮時 Z 線互相拉近、細肌絲往中央滑（I 帶與 H 區變窄），但<b>粗肌絲長度不變 → A 帶寬度相同</b>。肌絲本身沒變短，是「重疊變多」。</figcaption></figure>
 
 <h4>肌纖維類型：為什麼有人天生適合衝刺、有人適合馬拉松</h4><p>不是所有肌纖維都一樣。依收縮速度與代謝特性，人類骨骼肌大致分三型，這是連結「訓練專項性」的關鍵：</p>
 <ul><li><b>Type I（慢縮，slow-twitch / 氧化型）</b>：粒線體多、微血管密、肌紅素高、有氧能力強、<b>最抗疲勞</b>，但收縮慢、產力小。→ 長跑、划船、耐力型。</li><li><b>Type IIa（快縮氧化糖解型）</b>：中間性格的「可塑」纖維，兼具一定爆發與抗疲勞；訓練方向會把它往耐力或爆發拉，是<b>最容易被訓練改變</b>的一型。</li><li><b>Type IIx（快縮糖解型）</b>：收縮<b>最快、產力最大</b>，但<b>最快疲勞</b>、有氧能力差。→ 短跑、舉重、跳躍等高強度短時間項目。</li></ul>
@@ -890,6 +935,20 @@ const NOTES={
 
 <h4>心血管系統：把燃料與氧氣送到肌肉</h4><p>肌肉再會收縮，沒有燃料與氧氣也是空談。心臟是幫浦，分四個腔：左右<b>心房（atria，收血）</b>在上、左右<b>心室（ventricles，打血）</b>在下。血流路徑一定要能背出來：</p>
 <div class="num"><b>血流路徑：</b><br><b>體循環：</b>左心室 → 主動脈 → 全身組織 → 大靜脈 → 右心房。<br><b>肺循環：</b>右心房 → 右心室 → 肺動脈 → 肺（換氣）→ 肺靜脈 → 左心房 → 左心室。<br>記憶點：<b>左心室壁最厚</b>，因為它要把血打到全身；肺動脈是少數「動脈裡流缺氧血」的例外。</div>
+<figure class="fig"><svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="血流循環路徑示意圖">
+<defs><marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0 0L7 3L0 6z" fill="#ff6b6b"/></marker><marker id="ab" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0 0L7 3L0 6z" fill="#3ea6ff"/></marker></defs>
+<g fill="#141e29"><rect x="88" y="40" width="128" height="38" rx="8" stroke="#ff6b6b" stroke-width="2"/><rect x="372" y="40" width="156" height="38" rx="8" stroke="#ff6b6b" stroke-width="2"/><rect x="450" y="128" width="118" height="36" rx="8" stroke="#3ea6ff" stroke-width="2"/><rect x="386" y="218" width="128" height="38" rx="8" stroke="#3ea6ff" stroke-width="2"/><rect x="76" y="218" width="150" height="38" rx="8" stroke="#57d9a3" stroke-width="2"/><rect x="34" y="128" width="118" height="36" rx="8" stroke="#ff6b6b" stroke-width="2"/></g>
+<g fill="#e8eef4" font-size="13" text-anchor="middle"><text x="152" y="64">左心室 LV</text><text x="450" y="64">主動脈→全身組織</text><text x="509" y="151">右心房 RA</text><text x="450" y="242">右心室 RV</text><text x="151" y="242">肺（換氣 O₂/CO₂）</text><text x="93" y="151">左心房 LA</text></g>
+<g fill="none"><line x1="216" y1="59" x2="366" y2="59" stroke="#ff6b6b" stroke-width="2.5" marker-end="url(#ar)"/>
+<line x1="500" y1="80" x2="509" y2="122" stroke="#3ea6ff" stroke-width="2.5" marker-end="url(#ab)"/>
+<line x1="509" y1="166" x2="470" y2="212" stroke="#3ea6ff" stroke-width="2.5" marker-end="url(#ab)"/>
+<line x1="384" y1="238" x2="230" y2="238" stroke="#3ea6ff" stroke-width="2.5" marker-end="url(#ab)"/>
+<line x1="103" y1="216" x2="93" y2="168" stroke="#57d9a3" stroke-width="2.5" marker-end="url(#ar)"/>
+<line x1="103" y1="126" x2="140" y2="82" stroke="#ff6b6b" stroke-width="2.5" marker-end="url(#ar)"/></g>
+<text x="300" y="243" text-anchor="middle" fill="#3ea6ff" font-size="11">肺動脈（缺氧血！）</text>
+<text x="300" y="140" text-anchor="middle" fill="#9fb0c0" font-size="13" font-weight="700">體循環<tspan fill="#ff6b6b">（紅=含氧）</tspan></text>
+<text x="300" y="160" text-anchor="middle" fill="#9fb0c0" font-size="13" font-weight="700">肺循環<tspan fill="#3ea6ff">（藍=缺氧）</tspan></text>
+</svg><figcaption>圖4　血流循環（順時針一圈）。紅＝含氧、藍＝缺氧；換氣後在肺變回紅。注意<b>肺動脈是流缺氧血</b>、<b>左心室壁最厚</b>。</figcaption></figure>
 <p>幾個之後常用到的名詞先建立：<b>心輸出量（cardiac output）＝心跳率 × 每跳輸出量（stroke volume）</b>；血壓分收縮壓/舒張壓。運動時心輸出量上升、把更多血導向工作肌肉，這是第 6 章生理適應的基礎。</p>
 
 <h4>呼吸系統：氣體交換的場所</h4><p>呼吸的核心就一句：在<b>肺泡（alveoli）</b>把吸進來的 O₂ 換進血液、把代謝產生的 CO₂ 排出去，靠的是<b>分壓差的擴散</b>。運動時你喘，是身體要①送更多 O₂ 給肌肉、②加速排掉高強度運動累積的 CO₂ 與酸。這與第 3 章能量系統直接相扣。</p>
