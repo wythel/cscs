@@ -32,8 +32,14 @@
 瀏覽器 `localStorage`，key = `cscs_v1`；存各章翻卡熟練度與測驗分數。清除進度會清掉。
 
 ## 目前狀態（已完成）
-- 24 章：150+ 張翻卡、**約 316 題測驗（每章 12–14 題）**、24 章講師版重點整理、12 週計畫。
-- 所有 quiz 的答案索引與選項數已驗證正確。
+- 24 章：**150 張翻卡**、**316 題測驗**（`CH` 內建 76 題 ＋ `EXTRA` 240 題，載入時合併，每章 12–14 題）、
+  24 章講師版重點整理、12 週計畫。
+- **重點整理已全數擴寫為完整逐節講師版**：約 22 萬字元、平均每章約 9,200 字元（原本約 3,500）。
+- **內嵌 SVG 圖解共 55 張**，24 章每章至少 1 張（Ch1 有 4 張）。
+- 所有 quiz 的答案索引與選項數已驗證正確；已部署至 GitHub Pages 並線上驗證通過。
+
+> 注意：dashboard 顯示的 316 是**合併後**的總數。若直接讀未合併的 `CH`，只會看到 76 題——
+> 不要把 `CH` 的數量再加一次 `EXTRA` 而誤算成 556。
 
 ## 驗證方式
 改完後建議跑（在能存取檔案的環境）：
@@ -43,9 +49,23 @@ const js=h.match(/<script>([\s\S]*)<\/script>/)[1];new Function(js);console.log(
 ```
 確認 JS 無語法錯誤；並檢查 quiz 每題 `a` 落在 `opts` 範圍內。
 
+編輯 `NOTES` 時的注意事項：
+- 每章是一個 **template literal**，內容中**不可出現反引號或 `${`**，否則會提前結束字串。
+- SVG 用 `viewBox="0 0 600 300"`、深色配色（`#3ea6ff` 藍／`#57d9a3` 綠／`#ffb454` 橘／
+  `#ff6b6b` 紅／`#e8eef4` 文字／`#9fb0c0` 次要／`#141e29` 底），外面包 `<figure class="fig">`＋`<figcaption>`。
+- 驗證圖沒有溢出邊界：在瀏覽器用 `getBoundingClientRect()` 比對 svg 與各子元素
+  （**不要用 `getBBox()`**——它不含元素自身的 `transform`，旋轉文字會誤報溢出）。
+
+## 部署
+- Repo：`https://github.com/wythel/cscs`（public、`origin`、分支 `main`）
+- 線上：`https://wythel.github.io/cscs/`
+- 流程：改 `CSCS-study-app.html` → `cp` 覆蓋 `index.html` → `node -e` 驗 JS → `git add -A && commit && push`。
+  Pages 約 1–3 分鐘生效；手機看到舊版是快取，用 `?v=n` 或強制重整。
+
 ## 可能的後續工作（使用者曾提到或可延伸）
 - 加計算題（1RM 換算、%HRR/Karvonen、能量系統比例）。
 - 匯出 Anki 牌組（.apkg 或 CSV）。
 - 把「重點整理」做成可列印 PDF 講義。
-- 各章加圖解／示意圖。
-- 部署到 GitHub Pages（把 `index.html` 上傳到 public repo → Settings → Pages）。
+- 依擴寫後的新內容補測驗題（新增了不少原本沒有的考點，例如測驗順序、
+  1RM 流程、腰帶時機、各期組數次數、Karvonen 對照等）。
+- 加入 service worker 讓手機可離線使用。
