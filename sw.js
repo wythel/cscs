@@ -1,11 +1,12 @@
 /* CSCS 備考 App — service worker
  * 策略：
- *   - 導覽/HTML：network-first，成功就順手更新快取；離線時回退到快取。
- *     這樣「線上一定看到最新版」（不必再強制重整），「離線也讀得到」。
+ *   - 導覽/HTML：network-first 且強制向伺服器驗證，成功就順手更新快取；
+ *     離線時回退到快取。這樣「線上一定看到最新版」（不必再強制重整），
+ *     「離線也讀得到」。
  *   - 其他靜態檔（圖示、manifest）：cache-first，背景更新。
  * 因為 HTML 走 network-first，改版時不需要手動 bump 版本號。
  */
-const CACHE = 'cscs-v1';
+const CACHE = 'cscs-v2';
 const SHELL = ['./', './index.html', './manifest.webmanifest',
                './icons/icon-192.png', './icons/icon-512.png',
                './icons/icon-maskable-512.png', './icons/apple-touch-icon.png'];
@@ -34,8 +35,11 @@ self.addEventListener('fetch', e => {
                 (req.headers.get('accept') || '').includes('text/html');
 
   if (isDoc) {
+    // cache:'no-cache' 會跳過瀏覽器自己的 HTTP 快取、直接向伺服器驗證
+    // （GitHub Pages 對 HTML 送 max-age=600，不加這個的話最多可能拿到 10 分鐘前的版本）。
+    // 有 ETag，所以未改版時是便宜的 304。
     e.respondWith(
-      fetch(req)
+      fetch(req, { cache: 'no-cache' })
         .then(res => {
           const copy = res.clone();
           caches.open(CACHE).then(c => c.put('./index.html', copy));

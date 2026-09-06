@@ -70,7 +70,7 @@ const js=h.match(/<script>([\s\S]*)<\/script>/)[1];new Function(js);console.log(
 - 流程：改 `index.html` → `node -e` 驗 JS → `git add -A && commit && push`。
   Pages 約 1–3 分鐘生效。**service worker 上線後不必再強制重整**——
   HTML 走 network-first，有網路時一定拿到最新版。
-- 動到 `sw.js` 的快取清單時，把 `CACHE` 常數（目前 `cscs-v1`）改個號，舊快取才會被清掉。
+- 動到 `sw.js` 的快取清單時，把 `CACHE` 常數（目前 `cscs-v2`）改個號，舊快取才會被清掉。
 
 ## 可能的後續工作（使用者曾提到或可延伸）
 - 加計算題（1RM 換算、%HRR/Karvonen、能量系統比例）。
