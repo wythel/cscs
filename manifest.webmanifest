@@ -1,0 +1,17 @@
+{
+  "name": "CSCS 備考：讀書計畫 · 翻卡 · 測驗",
+  "short_name": "CSCS 備考",
+  "description": "NSCA CSCS 認證考試的中文自學工具：12 週計畫、24 章講師版重點整理、150 張翻卡、316 題測驗。",
+  "lang": "zh-Hant",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0f1720",
+  "theme_color": "#0f1720",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

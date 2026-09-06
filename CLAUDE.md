@@ -13,9 +13,11 @@
 - 卡片/題目/重點：中英對照，考點導向。
 
 ## 產出檔案（都在本資料夾）
-- `CSCS-study-app.html` — 主要開發檔（單一 HTML，離線可用）。
-- `index.html` — 上面那支的複本，命名給 **GitHub Pages** 部署用。
-  **每次改完 `CSCS-study-app.html`，要把它複製覆蓋 `index.html` 保持同步。**
+- `index.html` — **唯一的開發檔兼部署檔**（單一自足 HTML，無外部相依）。
+  直接改它就好；**不再有 `CSCS-study-app.html`，也不需要任何 `cp` 同步步驟**。
+- `sw.js` / `manifest.webmanifest` / `icons/` — PWA：離線可用、可加到手機主畫面。
+  `sw.js` 對 HTML 採 **network-first**，所以改版**不必** bump 版本號、手機也不必強制重整；
+  離線時自動回退到快取。用 `file://` 直接開檔時會安靜略過註冊，不影響單檔使用。
 - `Chapter 1.pdf` ~ `Chapter 24.pdf` — 原始教材（雲端同步，bash 讀取可能鎖定，必要時用編輯器的檔案讀取工具下載）。
 
 ## App 架構（單一 HTML，無外部相依）
@@ -44,7 +46,7 @@
 ## 驗證方式
 改完後建議跑（在能存取檔案的環境）：
 ```bash
-node -e 'const fs=require("fs");const h=fs.readFileSync("CSCS-study-app.html","utf8");
+node -e 'const fs=require("fs");const h=fs.readFileSync("index.html","utf8");
 const js=h.match(/<script>([\s\S]*)<\/script>/)[1];new Function(js);console.log("JS OK");'
 ```
 確認 JS 無語法錯誤；並檢查 quiz 每題 `a` 落在 `opts` 範圍內。
@@ -59,8 +61,10 @@ const js=h.match(/<script>([\s\S]*)<\/script>/)[1];new Function(js);console.log(
 ## 部署
 - Repo：`https://github.com/wythel/cscs`（public、`origin`、分支 `main`）
 - 線上：`https://wythel.github.io/cscs/`
-- 流程：改 `CSCS-study-app.html` → `cp` 覆蓋 `index.html` → `node -e` 驗 JS → `git add -A && commit && push`。
-  Pages 約 1–3 分鐘生效；手機看到舊版是快取，用 `?v=n` 或強制重整。
+- 流程：改 `index.html` → `node -e` 驗 JS → `git add -A && commit && push`。
+  Pages 約 1–3 分鐘生效。**service worker 上線後不必再強制重整**——
+  HTML 走 network-first，有網路時一定拿到最新版。
+- 動到 `sw.js` 的快取清單時，把 `CACHE` 常數（目前 `cscs-v1`）改個號，舊快取才會被清掉。
 
 ## 可能的後續工作（使用者曾提到或可延伸）
 - 加計算題（1RM 換算、%HRR/Karvonen、能量系統比例）。

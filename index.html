@@ -4,6 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CSCS 讀書計畫 · 翻卡 · 測驗</title>
+<meta name="description" content="NSCA CSCS 認證考試的中文自學工具：12 週計畫、24 章講師版重點整理、150 張翻卡、316 題測驗。">
+<meta name="theme-color" content="#0f1720">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="CSCS 備考">
 <style>
   :root{
     --bg:#0f1720; --panel:#17222e; --panel2:#1e2c3a; --line:#2b3d4f;
@@ -2871,6 +2879,14 @@ fillChapSel(document.getElementById('nt-chap'),false);
 fillChapSel(document.getElementById('fc-chap'),true);
 fillChapSel(document.getElementById('qz-chap'),true);
 renderPlan();renderDash();loadDeck();
+
+/* ============ service worker（離線 + 免強制重整） ============ */
+/* 只在 http(s) 下註冊；用 file:// 直接開檔時會安靜略過，不影響離線單檔使用。 */
+if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+  window.addEventListener('load', function(){
+    navigator.serviceWorker.register('sw.js').catch(function(){ /* 忽略：離線功能純屬加分 */ });
+  });
+}
 </script>
 </body>
 </html>
